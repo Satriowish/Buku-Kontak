@@ -1,58 +1,84 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
     color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
+    background-image: url('../img/background.png'); /* Ganti dengan path gambar Anda */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
+    width: 100%;
+    max-width: 800px; /* Kurangi lebar maksimal menjadi lebih kecil */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
+    margin: 20px auto;
+}
+
+a {
+    color: #3498db; 
+    text-decoration: none; 
+    cursor: pointer; 
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9; 
 }
 
 h1, h2 {
-    color: #4a4a4a;
+    color: #333;
     text-align: center;
+    margin-bottom: 30px; /* Memperbesar margin */
 }
 
 table {
-    width: 100%;
+    width: auto; /* Ganti dari 100% ke auto agar sesuai dengan konten */
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
+
 th, td {
-    padding: 12px;
+    padding: 15px; /* Memperbesar padding */
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #f8f9fa;
-    font-weight: 600;
+    background-color: #3498db;
+    color: #fff;
 }
 
-a {
-    color: #3498db;
-    text-decoration: none;
+th:nth-child(1), td:nth-child(1) { width: 5%; }
+th:nth-child(2), td:nth-child(2) { width: 30%; } 
+th:nth-child(3), td:nth-child(3) { width: 15%; }
+th:nth-child(4), td:nth-child(4) { width: 25%; }
+th:nth-child(5), td:nth-child(5) {width: 15%;} 
+
+.action-column {
+    text-align: center;
+    white-space: nowrap;
 }
 
 .btn {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 12px; /* Memperbesar padding tombol */
     border-radius: 4px;
     font-weight: 600;
     text-align: center;
     transition: all 0.3s ease;
     text-decoration: none;
     margin: 2px;
-    min-width: 80px; /* Menetapkan lebar minimum */
+    font-size: 0.9em; /* Memperbesar ukuran font tombol */
 }
 
 .btn-edit {
@@ -65,24 +91,17 @@ a {
     color: #fff;
 }
 
-.btn-edit:hover {
-    background-color: #2980b9;
-}
-
-.btn-delete:hover {
-    background-color: #c0392b;
-}
-
 form {
     background-color: #f8f9fa;
-    padding: 20px;
+    padding: 25px; /* Memperbesar padding */
     border-radius: 8px;
+    margin-top: 30px; /* Memperbesar margin */
 }
 
 input[type="text"], input[type="number"], input[type="email"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px; /* Memperbesar padding */
+    margin-bottom: 15px; /* Memperbesar margin */
     border: 1px solid #ddd;
     border-radius: 4px;
 }
@@ -91,34 +110,39 @@ button[type="submit"] {
     background-color: #28a745;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px; /* Memperbesar padding */
     border-radius: 4px;
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s;
 }
-
-button[type="submit"]:hover {
-    background-color: #218838;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #6c757d;
-}
-
-/* Tambahkan gaya baru untuk kolom aksi */
-.action-column {
-    white-space: nowrap;
-    text-align: center;
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 600px) {
-    .btn {
-        display: block;
-        width: 100%;
-        margin-bottom: 5px;
+@media (max-width: 1200px) {
+    .container {
+        width: 95%; /* Atur agar lebih besar dari sebelumnya */
+        padding: 25px;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Atur agar lebih besar lagi */
+        padding: 20px;
+    }
+}
+
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    th, td {
+        white-space: nowrap;
+        padding: 10px;
+    }
+    
+    .btn {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+ 

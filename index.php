@@ -11,14 +11,14 @@
 	<div class="container">
 		<h1>Aplikasi Kontak </h1>
 		
-		<table>
+		<table style="table-layout: auto; width: 100%;">
 			<thead>
 				<tr>
-					<th>No.</th>
-					<th>Nama</th>
-					<th>Telpon</th>
-					<th>Email</th>
-					<th>Aksi</th>
+					<th style="width: 5%;">No.</th>
+					<th style="width: auto; min-width: 200px;">Nama</th>
+					<th style="width: 15%;">Telpon</th>
+					<th style="width: 25%;">Email</th>
+					<th style="width: 15%;">Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,10 +35,10 @@
 				?>
 				<tr>
 					<td><?php echo $no++; ?></td>
-					<td><a href="form_edit_kontak.php?idKontak=<?php echo $data[0]; ?>"><?php echo $data[1]; ?></a></td>
-					<td><?php echo $data[2]; ?></td>
-					<td><?php echo $data[3]; ?></td>
-					<td>
+					<td style="white-space: normal; overflow: visible; text-overflow: clip; word-wrap: break-word;"><a href="form_edit_kontak.php?idKontak=<?php echo $data[0]; ?>"><?php echo $data[1]; ?></a></td>
+					<td title="<?php echo htmlspecialchars($data[2]); ?>"><?php echo $data[2]; ?></td>
+					<td title="<?php echo htmlspecialchars($data[3]); ?>"><?php echo $data[3]; ?></td>
+					<td class="action-column">
 						<a href="form_edit_kontak.php?idKontak=<?php echo $data[0]; ?>" class="btn btn-edit">Edit</a>
 						<a href="proses/delete_kontak.php?idKontak=<?php echo $data[0]; ?>" class="btn btn-delete">Hapus</a>
 					</td>
