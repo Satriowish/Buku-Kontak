@@ -5,18 +5,21 @@ body {
     margin: 0;
     padding: 20px;
     min-height: 100vh;
-    background-image: url('../img/background.png'); /* Ganti dengan path gambar Anda */
+    background-image: url('../img/background.png'); /* Sesuaikan dengan path gambar */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #001f3f; /* Biru navy sebagai background utama */
 }
+
 .container {
     width: 100%;
-    max-width: 800px; /* Kurangi lebar maksimal menjadi lebih kecil */
-    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9); /* Putih transparan */
+    color: #001f3f; /* Warna teks di dalam container biru navy */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -24,45 +27,44 @@ body {
 }
 
 a {
-    color: #3498db; 
-    text-decoration: none; 
-    cursor: pointer; 
+    color: #3498db; /* Biru cerah untuk link */
+    text-decoration: none;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #2980b9; 
+    color: #1f78b4; /* Biru navy lebih gelap saat hover */
 }
 
 h1, h2 {
-    color: #333;
+    color: #001f3f; /* Judul dalam container dengan warna navy */
     text-align: center;
-    margin-bottom: 30px; /* Memperbesar margin */
+    margin-bottom: 30px;
 }
 
 table {
-    width: auto; /* Ganti dari 100% ke auto agar sesuai dengan konten */
+    width: auto;
     border-collapse: collapse;
     margin-bottom: 30px;
 }
 
-
 th, td {
-    padding: 15px; /* Memperbesar padding */
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #3498db;
-    color: #fff;
+    background-color: #003366; /* Biru navy lebih gelap untuk header tabel */
+    color: #fff; /* Teks putih di header */
 }
 
 th:nth-child(1), td:nth-child(1) { width: 5%; }
-th:nth-child(2), td:nth-child(2) { width: 30%; } 
+th:nth-child(2), td:nth-child(2) { width: 30%; }
 th:nth-child(3), td:nth-child(3) { width: 15%; }
 th:nth-child(4), td:nth-child(4) { width: 25%; }
-th:nth-child(5), td:nth-child(5) {width: 15%;} 
+th:nth-child(5), td:nth-child(5) { width: 15%; }
 
 .action-column {
     text-align: center;
@@ -71,78 +73,103 @@ th:nth-child(5), td:nth-child(5) {width: 15%;}
 
 .btn {
     display: inline-block;
-    padding: 8px 12px; /* Memperbesar padding tombol */
+    padding: 8px 12px;
     border-radius: 4px;
     font-weight: 600;
     text-align: center;
     transition: all 0.3s ease;
     text-decoration: none;
     margin: 2px;
-    font-size: 0.9em; /* Memperbesar ukuran font tombol */
+    font-size: 0.9em;
 }
 
 .btn-edit {
-    background-color: #3498db;
+    background-color: #003366; /* Biru navy lebih gelap untuk tombol edit */
     color: #fff;
 }
 
+.btn-edit:hover {
+    background-color: #3498db; /* Biru lebih cerah saat hover */
+    color: #000000;
+}
+
 .btn-delete {
-    background-color: #e74c3c;
+    background-color: #e74c3c; /* Merah untuk tombol delete */
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #6f1b11; /* Merah lebih gelap saat hover */
     color: #fff;
 }
 
 form {
     background-color: #f8f9fa;
-    padding: 25px; /* Memperbesar padding */
+    padding: 25px;
     border-radius: 8px;
-    margin-top: 30px; /* Memperbesar margin */
+    margin-top: 30px;
 }
 
 input[type="text"], input[type="number"], input[type="email"] {
     width: 100%;
-    padding: 12px; /* Memperbesar padding */
-    margin-bottom: 15px; /* Memperbesar margin */
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 button[type="submit"] {
-    background-color: #28a745;
+    background-color: #f1c40f; /* Kuning untuk tombol submit */
     color: #fff;
     border: none;
-    padding: 12px 24px; /* Memperbesar padding */
+    padding: 12px 24px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s;
 }
+
+button[type="submit"]:hover {
+    background-color: #f39c12; /* Kuning lebih gelap saat hover */
+}
+
 @media (max-width: 1200px) {
     .container {
-        width: 95%; /* Atur agar lebih besar dari sebelumnya */
+        width: 95%;
         padding: 25px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        width: 90%; /* Atur agar lebih besar lagi */
+        width: 90%;
         padding: 20px;
     }
 }
 
+table {
+    display: block;
+    overflow-x: auto;
+}
 
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-    
-    th, td {
-        white-space: nowrap;
-        padding: 10px;
-    }
-    
-    .btn {
-        padding: 6px 10px;
-        font-size: 0.8em;
-    }
- 
+th, td {
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.btn {
+    padding: 6px 10px;
+    font-size: 0.8em;
+}
+
+/* ANJAI MABAR*/
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #c4c4c4;
+    padding: 10px 0; 
+
+}
+
